@@ -1,11 +1,13 @@
 import React from "react";
 
-export const SearchBtn = props => (
+const SearchBtn = props => (
   <button
-    {...props}
+    onClick={props.clicked}
     style={{ float: "right", marginBottom: 10 }}
     className="btn btn-success"
   >
-    {props.children}
+    Search
   </button>
 );
+
+export default SearchBtn;

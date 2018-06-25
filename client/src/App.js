@@ -1,16 +1,23 @@
-import React, { Component } from "react";
-import PersistentDrawer from "./components/search";
-import ReactDOM from "react-dom";
-import SearchContainer from "./components/search/SearchContainer";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Nav from "./components/Nav/Nav";
+import Search from "./pages/Search";
+import SavedArticles from "./pages/SavedArticles";
+import NoMatch from "./pages/NoMatch";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <SearchContainer />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      <Nav />
+      <Switch>
+        <Route exact path="/" component={Search} />
+        <Route exact path="/home" component={Search} />
+        <Route exact path="/search" component={Search} />
+        <Route exact path="/saved/" component={SavedArticles} />
+        <Route component={NoMatch} />
+      </Switch>
+    </div>
+  </Router>
+);
 
 export default App;

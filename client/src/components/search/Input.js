@@ -1,7 +1,16 @@
 import React from "react";
 
-export const Input = props => (
+const Inputs = props => (
   <div ClassName="form-group">
-    <input ClassName="form-control" {...props} />
+    <label for={props.name}>{props.name}</label>
+    <input
+      ClassName="form-control"
+      value={props.value}
+      onChange={props.changed}
+      type="text"
+      className="form-control"
+    />
   </div>
 );
+
+export default Inputs;
